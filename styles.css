@@ -1,0 +1,187 @@
+/* styles.css */
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: white;
+    transition: background-color 0.3s ease;
+    flex-direction: column;
+}
+
+/* Dark Mode and Light Mode */
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+.mode-toggle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 10px;
+    background-color: #f0f0f0;
+    transition: background-color 0.3s ease;
+}
+
+body.dark-mode .mode-toggle {
+    background-color: #444;
+}
+
+/* Ensure checkbox is hidden, and use label for interaction */
+.checkbox {
+    display: none;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 24px;
+    background-color: #ddd;
+    padding: 5px 15px;
+    border-radius: 20px;
+    position: relative;
+    transition: background-color 0.3s;
+}
+
+.switch-label {
+    transition: opacity 0.3s;
+    position: absolute;
+    left: 10px;
+}
+
+.checkbox:checked + .checkbox-label .switch-label {
+    opacity: 0;
+}
+
+.checkbox:checked + .checkbox-label .switch-label {
+    opacity: 1;
+}
+
+.ball {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    transform: translateY(-50%);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.calculator {
+    width: 320px;
+    border-radius: 10px;
+    background-color: #958f8f;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.calculator.dark-mode {
+    background-color: #444;
+}
+
+.display {
+    width: 100%;
+    height: 70px;
+    font-size: 24px;
+    text-align: right;
+    padding: 10px;
+    border: none;
+    background-color: #f9f9f9;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.display.dark-mode {
+    background-color: #555;
+    color: #fff;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    padding: 20px 0;
+}
+
+button {
+    padding: 20px;
+    font-size: 18px;
+    border: none;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #ddd;
+}
+
+button.operator {
+    background-color: #f28d1d;
+    color: white;
+}
+
+button.operator:hover {
+    background-color: #e07313;
+}
+
+button.equals {
+    background-color: #1d7fb2;
+    color: white;
+    grid-column: span 1;
+}
+
+button.equals:hover {
+    background-color: #1c6a8b;
+}
+
+button:active {
+    background-color: #bbb;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+/* Dark Mode styles */
+input[type="checkbox"]:checked ~ .container .calculator {
+    background-color: #333;
+}
+
+input[type="checkbox"]:checked ~ .container .calculator .display {
+    background-color: #444;
+    color: white;
+}
+
+input[type="checkbox"]:checked ~ .container .calculator .buttons button {
+    background-color: #666;
+    color: white;
+}
+
+input[type="checkbox"]:checked ~ .container .calculator .buttons button:hover {
+    background-color: #555;
+}
