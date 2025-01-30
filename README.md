@@ -1,4 +1,4 @@
-# Calculator Web Application
+# Calculator App
 
 ## Overview
 The **Calculator** is a simple and interactive web application that allows users to perform basic arithmetic calculations. It features a clean and responsive layout with a mode toggle to switch between light and dark themes. The app is built using HTML, CSS, and JavaScript.
